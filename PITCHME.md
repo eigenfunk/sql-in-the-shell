@@ -1,7 +1,7 @@
 ---
 marp: true
-title: Marp CLI example
-description: Hosting Marp slide deck on the web
+title: SQL in the shell
+description: Ein csv ist eine Tabelle, viele sind eine Datenbank
 theme: uncover
 paginate: true
 _paginate: false
@@ -11,9 +11,9 @@ _paginate: false
 
 # <!--fit--> Marp CLI example
 
-Hosting Marp slide deck on the web
+Ein csv ist eine Tabelle, viele sind eine Datenbank
 
-https://github.com/yhatt/marp-cli-example
+https://github.com/eigenfunk/sql-in-the-shell
 
 <style scoped>a { color: #eee; }</style>
 
