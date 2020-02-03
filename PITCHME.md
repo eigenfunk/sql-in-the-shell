@@ -17,7 +17,7 @@ https://github.com/eigenfunk/sql-in-the-shell
 
 <style scoped>a { color: #eee; }</style>
 
-<!-- This is presenter note with an X. You can write down notes through HTML comment. -->
+<!-- This is presenter note with. You can write down notes through HTML comment. -->
 
 ---
 
