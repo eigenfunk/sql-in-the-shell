@@ -41,10 +41,10 @@ Relationenalgebra auf der Kommandozeile
 
 - Projektion
 - Selektion
-- Kartesisches Produkt
 - Vereinigung
 - Differenz
 - Umbenennung
+- Kartesisches Produkt
 
 ---
 
@@ -96,23 +96,14 @@ Relationenalgebra auf der Kommandozeile
 ![bg](#148)
 ![](#fff)
 
-# Kartesisches Produkt
-
-> $$
-> R\times S:=\{(a_1,a_2,...,a_n,b_1,b_2,...,b_m)| \\
-> (a_1,...,a_n)\in R\wedge (b_1,...,b_m)\in S\}
-> $$
-
----
-
-![bg](#148)
-![](#fff)
-
 # Differenz
 
 > $$
 > R {-} S := R {\setminus} S := \{ t | t \in R \land t \notin S \}
 > $$
+
+- `SELECT * FROM Customers_A`
+  `EXCEPT SELECT * FROM Customers_B;`
 
 ---
 
@@ -124,6 +115,20 @@ Relationenalgebra auf der Kommandozeile
 > $$
 > \rho_{[\mathrm{neu}\leftarrow\mathrm{alt}]}(R):= \{t'|t'(R-\mathrm{alt})=t(R-\mathrm{alt}) \land t'(\mathrm{neu})=t(\mathrm{alt})\}
 > $$
+
+---
+
+![bg](#148)
+![](#fff)
+
+# Kartesisches Produkt
+
+> $$
+> R\times S:=\{(a_1,a_2,...,a_n,b_1,b_2,...,b_m)| \\
+> (a_1,...,a_n)\in R\wedge (b_1,...,b_m)\in S\}
+> $$
+
+- `SELECT * FROM R, S;`
 
 ---
 
@@ -143,16 +148,17 @@ Relationenalgebra auf der Kommandozeile
 
 # Revue
 
-- `cat`: Vereinigung
-- `sed` und `grep`: Selektion
-- `cut`: Projektion
-- `awk`: Umbenennung
-- `diff` Differenz
+- [cat](<https://de.wikipedia.org/wiki/Cat_(Unix)>): Vereinigung
+- [grep](https://de.wikipedia.org/wiki/Grep): Selektion
+- [awk](https://de.wikipedia.org/wiki/Awk): Selektion, Projektion, Umbenennung
+- [comm](https://en.wikipedia.org/wiki/Comm): Differenz
 
 ---
 
 ![bg](#148)
 ![](#fff)
+
+# Et al.
 
 [cat](<https://de.wikipedia.org/wiki/Cat_(Unix)>),[sed](<https://de.wikipedia.org/wiki/Sed_(Unix)>), [grep](https://de.wikipedia.org/wiki/Grep), [cut](<https://de.wikipedia.org/wiki/Cut_(Unix)>), [awk](https://de.wikipedia.org/wiki/Awk), [join](<https://de.wikipedia.org/wiki/Join_(Unix)>),
 [comm](https://en.wikipedia.org/wiki/Comm), [diff](https://de.wikipedia.org/wiki/Diff), [uniq](https://en.wikipedia.org/wiki/Uniq) und [sort](<https://de.wikipedia.org/wiki/Sort_(Unix)>)

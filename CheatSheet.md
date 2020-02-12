@@ -24,9 +24,22 @@ marp: true
 ## Selection
 
 - `SELECT * FROM Customers WHERE Country LIKE '%ada%';`
-
   - `cat Customer_A.csv | grep ada`
+  - `awk -F ',' 'OFS="," {if ($7 ~ /ada/) print $0}' Customer_A.csv`
+
+## Vereinigung
+
+- `SELECT * FROM Customers_A UNION SELECT * FROM Customers_B;`
+  - `cat Customer_A.csv Customer_B.csv`
+  - `cat Customer_A.csv Customer_B.csv | sort | uniq`
 
 ## Differenz
 
-- `comm -23 <(sort A) <(sort B)`
+- `SELECT * FROM Customers_A EXCEPT SELECT * FROM Customers_B;`
+  - `comm -23 <(sort Customer_A.csv) <(sort Customer_B.csv)`
+
+## Kartesisches Produkt
+
+- `SELECT * FROM R, S;`
+
+  - siehe: `./bin/crt.sh`
