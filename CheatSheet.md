@@ -7,19 +7,19 @@ marp: true
 ## Relation
 
 - `SELECT * FROM Customers;`
-  - `cat Customer.csv`
-  - `awk '{print}' Customer.csv`
+  - `cat Customer_A.csv`
+  - `awk '{print}' Customer_A.csv`
 
 ## Projektion
 
 - `SELECT CustomerName, City FROM Customers;`
 
-  - `awk '{print $1}' Customer.csv`
-  - `awk -F ',' '{print $1}' Customer.csv`
-  - `awk -F ',' 'OFS = "," {print $3, $5}' Customer.csv`
+  - `awk '{print $1}' Customer_A.csv`
+  - `awk -F ',' '{print $1}' Customer_A.csv`
+  - `awk -F ',' 'OFS = "," {print $3, $5}' Customer_A.csv`
 
 - Bonus: Sortierung
-  - `awk -F ',' 'OFS="," {print $2, $1, $3}' Customer.csv | sort --field-separator=',' --key=2`
+  - `awk -F ',' 'OFS="," {print $2, $1, $3}' Customer_A.csv | sort --field-separator=',' --key=2`
 
 ## Selection
 
@@ -37,6 +37,10 @@ marp: true
 
 - `SELECT * FROM Customers_A EXCEPT SELECT * FROM Customers_B;`
   - `comm -23 <(sort Customer_A.csv) <(sort Customer_B.csv)`
+
+## Umbenennung
+
+- `awk -F ',' 'OFS = "," {print $5, $3}' Customer_A.csv`
 
 ## Kartesisches Produkt
 
