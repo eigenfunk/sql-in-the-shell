@@ -68,6 +68,20 @@ Relationenalgebra auf der Kommandozeile
 ![bg](#148)
 ![](#fff)
 
+# Selektion
+
+> $$
+> \sigma_{\text{A}}(R) := \{ t | t \in R \wedge t \text{ erfüllt A} \}
+> $$
+
+- `SELECT * FROM Customers`
+  `WHERE Country LIKE '%ada%';`
+
+---
+
+![bg](#148)
+![](#fff)
+
 # Vereinigung
 
 > $$
@@ -76,17 +90,6 @@ Relationenalgebra auf der Kommandozeile
 
 - `SELECT * FROM Customers_A`
   `UNION SELECT * FROM Customers_B`
-
----
-
-![bg](#148)
-![](#fff)
-
-# Selektion
-
-> $$
-> \sigma_{\text{A}}(R) := \{ t | t \in R \wedge t \text{ erfüllt A} \}
-> $$
 
 ---
 
