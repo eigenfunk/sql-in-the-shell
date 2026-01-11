@@ -24,13 +24,13 @@ Relationenalgebra auf der Kommandozeile
 
 # Relation
 
-- Attribut
-- Tupel
+| id | name | stadt |
+|----|------|-------|
+| 1 | Mueller GmbH | Berlin |
+| 2 | Schmidt AG | Hamburg |
 
-  <!-- Relation: Attribute und Tupel.
-      Attribut: Typ
-      Tupel: Geordnete Werte, Datensatz.
-      -->
+- **Attribut**: Spalte (id, name, stadt)
+- **Tupel**: Zeile (1, Mueller GmbH, Berlin)
 
 ---
 
@@ -172,7 +172,10 @@ Relationenalgebra auf der Kommandozeile
 
 # Inspiration
 
-http://matt.might.net/articles/sql-in-the-shell/
+> *"Relational algebra can turn any
+> shell into a respectable database."*
+
+**Matt Might** - [SQL in the Shell](http://matt.might.net/articles/sql-in-the-shell/)
 
 ---
 
