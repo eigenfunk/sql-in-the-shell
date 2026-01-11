@@ -21,7 +21,7 @@ marp: true
 - Bonus: Sortierung
   - `awk -F ',' 'OFS="," {print $2, $1, $3}' Customer_A.csv | sort --field-separator=',' --key=2`
 
-## Selection
+## Selektion
 
 - `SELECT * FROM Customers WHERE Country LIKE '%ada%';`
   - `cat Customer_A.csv | grep ada`

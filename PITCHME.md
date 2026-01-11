@@ -116,6 +116,8 @@ Relationenalgebra auf der Kommandozeile
 > \rho_{[\mathrm{neu}\leftarrow\mathrm{alt}]}(R):= \{t'|t'(R-\mathrm{alt})=t(R-\mathrm{alt}) \land t'(\mathrm{neu})=t(\mathrm{alt})\}
 > $$
 
+- `awk -F ',' '{print $2, $1}' R`
+
 ---
 
 ![bg](#148)
