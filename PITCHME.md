@@ -71,7 +71,7 @@ Relationenalgebra auf der Kommandozeile
 # Selektion
 
 > $$
-> \sigma_{\text{A}}(R) := \{ t | t \in R \wedge t \text{ erfuellt A} \}
+> \sigma_{\text{A}}(R) := \{ t | t \in R \wedge t \text{ erfüllt A} \}
 > $$
 
 - `SELECT * FROM Customers`
