@@ -2,25 +2,19 @@
 marp: true
 title: SQL in the shell
 description: Relationenalgebra auf der Kommandozeile
-theme: uncover
+theme: terminal
 paginate: true
 _paginate: false
+class: invert
 ---
 
-![bg](./assets/gradient.jpg)
+<!-- _class: lead -->
 
 # SQL in the shell
 
-Relationenalgebra auf der Kommandozeile
-
-<style scoped>a { color: #eee; }</style>
-
-<!-- This is presenter note with. You can write down notes through HTML comment. -->
+### Relationenalgebra auf der Kommandozeile
 
 ---
-
-![bg](#148)
-![](#fff)
 
 # Relation
 
@@ -34,9 +28,6 @@ Relationenalgebra auf der Kommandozeile
 
 ---
 
-![bg](#148)
-![](#fff)
-
 # Operationen
 
 - Projektion
@@ -48,9 +39,6 @@ Relationenalgebra auf der Kommandozeile
 
 ---
 
-![bg](#148)
-![](#fff)
-
 # Projektion
 
 > $$
@@ -61,12 +49,7 @@ Relationenalgebra auf der Kommandozeile
 > \pi_{\beta}(R):=\{t_{\beta}|t \in R\}
 > $$
 
-- `SELECT CustomerName, City FROM Customers;`
-
 ---
-
-![bg](#148)
-![](#fff)
 
 # Selektion
 
@@ -74,13 +57,12 @@ Relationenalgebra auf der Kommandozeile
 > \sigma_{\text{A}}(R) := \{ t | t \in R \wedge t \text{ erf\"ullt A} \}
 > $$
 
-- `SELECT * FROM Customers`
-  `WHERE Country LIKE '%ada%';`
+```sql
+SELECT * FROM Customers
+    WHERE Country LIKE '%ada%';
+```
 
 ---
-
-![bg](#148)
-![](#fff)
 
 # Vereinigung
 
@@ -88,27 +70,27 @@ Relationenalgebra auf der Kommandozeile
 > R \cup S := \{ t | t \in R \lor t \in S \}
 > $$
 
-- `SELECT * FROM Customers_A`
-  `UNION SELECT * FROM Customers_B`
+```sql
+SELECT * FROM Customers_A
+    UNION
+        SELECT * FROM Customers_B;
+```
 
 ---
-
-![bg](#148)
-![](#fff)
 
 # Differenz
 
 > $$
-> R {-} S := R {\setminus} S := \{ t | t \in R \land t \notin S \}
+> R \setminus S := \{ t | t \in R \land t \notin S \}
 > $$
 
-- `SELECT * FROM Customers_A`
-  `EXCEPT SELECT * FROM Customers_B;`
+```sql
+SELECT * FROM Customers_A
+    EXCEPT
+        SELECT * FROM Customers_B;
+```
 
 ---
-
-![bg](#148)
-![](#fff)
 
 # Umbenennung
 
@@ -116,12 +98,11 @@ Relationenalgebra auf der Kommandozeile
 > \rho_{[\mathrm{neu}\leftarrow\mathrm{alt}]}(R):= \{t'|t'(R-\mathrm{alt})=t(R-\mathrm{alt}) \land t'(\mathrm{neu})=t(\mathrm{alt})\}
 > $$
 
-- `awk -F ',' '{print $2, $1}' R`
+```bash
+awk -F ',' '{print $2, $1}' R
+```
 
 ---
-
-![bg](#148)
-![](#fff)
 
 # Kartesisches Produkt
 
@@ -130,45 +111,36 @@ Relationenalgebra auf der Kommandozeile
 > (a_1,...,a_n)\in R\wedge (b_1,...,b_m)\in S\}
 > $$
 
-- `SELECT * FROM R, S;`
+```sql
+SELECT * FROM R, S;
+```
 
 ---
 
-![bg](#148)
-![](#fff)
+# Join?
 
-## Join?
-
-- Selektion
-- Projektion
-- Kartesisches Produkt
+> Kartesisches Produkt
+> Selektion
+> Projektion
 
 ---
-
-![bg](#148)
-![](#fff)
 
 # Revue
 
-- [cat](<https://de.wikipedia.org/wiki/Cat_(Unix)>): Vereinigung
+- [cat](https://de.wikipedia.org/wiki/Cat_(Unix)): Vereinigung
 - [grep](https://de.wikipedia.org/wiki/Grep): Selektion
 - [awk](https://de.wikipedia.org/wiki/Awk): Selektion, Projektion, Umbenennung
 - [comm](https://en.wikipedia.org/wiki/Comm): Differenz
 
 ---
 
-![bg](#148)
-![](#fff)
+# Unix Tools
 
-# Et al.
+[cat](https://de.wikipedia.org/wiki/Cat_(Unix)) · [sed](https://de.wikipedia.org/wiki/Sed_(Unix)) · [grep](https://de.wikipedia.org/wiki/Grep) · [cut](https://de.wikipedia.org/wiki/Cut_(Unix)) · [awk](https://de.wikipedia.org/wiki/Awk) · [join](https://de.wikipedia.org/wiki/Join_(Unix)) · [comm](https://en.wikipedia.org/wiki/Comm) · [diff](https://de.wikipedia.org/wiki/Diff) · [uniq](https://en.wikipedia.org/wiki/Uniq) · [sort](https://de.wikipedia.org/wiki/Sort_(Unix))
 
-[cat](<https://de.wikipedia.org/wiki/Cat_(Unix)>),[sed](<https://de.wikipedia.org/wiki/Sed_(Unix)>), [grep](https://de.wikipedia.org/wiki/Grep), [cut](<https://de.wikipedia.org/wiki/Cut_(Unix)>), [awk](https://de.wikipedia.org/wiki/Awk), [join](<https://de.wikipedia.org/wiki/Join_(Unix)>),
-[comm](https://en.wikipedia.org/wiki/Comm), [diff](https://de.wikipedia.org/wiki/Diff), [uniq](https://en.wikipedia.org/wiki/Uniq) und [sort](<https://de.wikipedia.org/wiki/Sort_(Unix)>)
+> *"Do one thing and do it well"*
 
 ---
-
-![bg](#148)
-![](#fff)
 
 # Inspiration
 
@@ -179,11 +151,12 @@ Relationenalgebra auf der Kommandozeile
 
 ---
 
-![bg](#148)
-![](#fff)
+<!-- _class: lead -->
 
-![bg 40% opacity blur](https://s.gravatar.com/avatar/b697f623bef1a9d58326f850ec184aa6?s=80)
+![w:150](https://s.gravatar.com/avatar/b697f623bef1a9d58326f850ec184aa6?s=150)
 
-# Martin Funk ([@eigenfunk](https://github.com/eigenfunk))
+# Danke!
 
-https://github.com/eigenfunk/sql-in-the-shell
+**Martin Funk** · [@eigenfunk](https://github.com/eigenfunk)
+
+[github.com/eigenfunk/sql-in-the-shell](https://github.com/eigenfunk/sql-in-the-shell)
