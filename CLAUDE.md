@@ -4,13 +4,17 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-SQL in the Shell is a Marp-based presentation demonstrating how relational algebra operations can be implemented using Unix/Linux command-line tools. It maps SQL operations to their shell equivalents:
+SQL in the Shell is a Marp-based presentation demonstrating how relational algebra operations can be implemented using Unix/Linux command-line tools. The presentation is designed to be shown alongside live terminal demos.
 
-- SELECT → cat/awk
-- WHERE → grep/awk
-- UNION → cat
-- EXCEPT → comm
-- Cartesian Product → custom shell scripts
+| SQL | Shell |
+|-----|-------|
+| SELECT * | cat |
+| SELECT a,b | cut / awk |
+| WHERE | grep / awk |
+| UNION | cat a b \| sort -u |
+| EXCEPT | comm -23 |
+| JOIN | join |
+| CROSS JOIN | cartesian.sh |
 
 ## Commands
 
@@ -25,15 +29,21 @@ npm run og-image         # Generate Open Graph image
 ## Project Structure
 
 - `PITCHME.md` - Main presentation (Marp Markdown)
-- `CheatSheet.md` - SQL-to-shell command reference
-- `work/` - Practical examples
-  - `*.csv` - Sample data files (Customer_A, Customer_B, Shipping)
-  - `bin/cartesian.sh` - Cartesian product with CLI options (-d delimiter, -t for tabs)
-  - `bin/crt.sh` - Simplified cartesian product
-- `themes/` - Custom Marp CSS themes
-- `assets/` - Images used in slides
-- `marp.config.js` - Marp configuration (themes, URL, OG image)
+- `themes/terminal.css` - Custom dark terminal theme
+- `work/` - Demo materials for live presentation
+  - `DEMO.md` - Step-by-step terminal commands aligned with slides
+  - `demo/` - Small example datasets (5 rows each) for live demos
+  - `Customer_*.csv`, `Shipping.csv` - Full sample datasets
+  - `bin/cartesian.sh` - Cartesian product script (-d delimiter, -t for tabs)
+
+## Live Presentation
+
+The slides are meant to accompany live terminal demos. Use `work/DEMO.md` as a script - it contains all commands to run for each slide.
 
 ## Deployment
 
-GitHub Actions deploys to GitHub Pages on push to master. The workflow builds slides and deploys to `gh-pages` branch.
+GitHub Actions deploys to GitHub Pages on push to master. Live at: https://eigenfunk.github.io/sql-in-the-shell/
+
+## LaTeX in Marp
+
+Use `\"u` instead of UTF-8 `ü` in `\text{}` blocks to avoid MathJax rendering issues.
