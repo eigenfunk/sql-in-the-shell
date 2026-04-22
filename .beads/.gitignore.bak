@@ -1,6 +1,6 @@
 # Dolt database (managed by Dolt, not git)
-# dolt/ (server mode unused)
-# embeddeddolt/ (committed for multi-machine sync)
+dolt/
+embeddeddolt/
 
 # Runtime files
 bd.sock
